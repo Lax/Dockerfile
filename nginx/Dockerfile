@@ -1,3 +1,5 @@
+# VERSION v1
+# docker build -t="liulantao/nginx:v1" .
 FROM centos:centos7
 MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2014-10-24

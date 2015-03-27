@@ -3,6 +3,7 @@
 FROM liulantao/centos7
 MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2014-10-24
+RUN yum install -y http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 RUN yum install nginx -y
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/nginx"]

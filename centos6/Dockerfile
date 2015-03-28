@@ -3,5 +3,6 @@
 FROM centos:centos6
 MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2015-03-27
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN yum install -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 RUN yum -q makecache

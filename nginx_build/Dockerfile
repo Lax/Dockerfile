@@ -70,4 +70,4 @@ ENV TMPROOT /tmp/rpmbuild
 RUN mkdir -p $TMPROOT/var/cache/nginx
 
 ADD fpm.sh /tmp/fpm.sh
-RUN /tmp/fpm.sh
+ENTRYPOINT ["/tmp/fpm.sh"]

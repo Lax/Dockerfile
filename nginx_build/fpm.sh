@@ -3,6 +3,7 @@
 
 #PREFIX=/
 #TMPROOT=/tmp/rpmbuild
+cd /tmp/output
 
 fpm -s dir -t rpm -f \
 -n nginx \

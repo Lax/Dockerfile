@@ -1,5 +1,5 @@
 # VERSION v1
-# docker build -t="liulantao/centos7" .
+# docker build -t="liulantao/centos6" .
 FROM centos:centos6
 MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2015-09-22

@@ -1,10 +1,10 @@
-# VERSION v1
-# docker build -t="liulantao/nginx" .
-FROM liulantao/centos7
+FROM centos:centos6
 MAINTAINER Liu Lantao <liulantao@gmail.com>
-ENV REFRESHED_AT 2014-10-24
-RUN yum install -y http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+ENV REFRESHED_AT 2015-09-23
+
+ADD http://yum.liulantao.com/repo/lax-centos.repo /etc/yum.repos.d/lax.repo
 RUN yum install nginx -y
+
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/nginx"]
 CMD ["-g", "daemon off;"]

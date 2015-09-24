@@ -7,7 +7,7 @@ cd /tmp/output
 
 fpm -s dir -t rpm -f \
 -n nginx \
--v $NGINX_VER --iteration 1.el6 \
+-v $NGINX_VER --iteration 3.el6 \
 --epoch $(date +%Y%m%d) \
 --vendor "Liu Lantao" \
 --description "Nginx package by Liu Lantao(https://github.com/Lax)" \

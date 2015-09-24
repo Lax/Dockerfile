@@ -6,7 +6,7 @@ MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2015-09-07
 RUN yum -y -q install gcc pcre-devel openssl-devel make jemalloc-devel lua-devel GeoIP-devel
 
-ENV NGINX_VER 1.9.4
+ENV NGINX_VER 1.9.5
 ENV NGX_HTTP_ACCOUNTING_MODULE_VER v0.5
 ENV ECHO_NGINX_MODULE_VER v0.58
 ENV LUA_NGINX_MODULE_VER v0.9.16

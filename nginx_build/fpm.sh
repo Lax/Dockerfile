@@ -13,6 +13,7 @@ fpm -s dir -t rpm -f \
 --description "Nginx package by Liu Lantao(https://github.com/Lax)" \
 --url "https://github.com/Lax" \
 --rpm-user nginx --rpm-group nginx \
+-d GeoIP \
 -C $TMPROOT \
 --prefix $PREFIX \
 --directories $PREFIX \

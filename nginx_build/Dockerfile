@@ -60,7 +60,7 @@ RUN ./configure --prefix=/etc/nginx \
   --with-mail \
   --with-mail_ssl_module \
   --with-file-aio \
-  --with-http_spdy_module \
+  --with-http_v2_module \
   --with-ipv6 && \
   make && make install DESTDIR=/tmp/rpmbuild
 

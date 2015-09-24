@@ -6,6 +6,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN yum install -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 
 ADD http://yum.liulantao.com/repo/lax-centos.repo /etc/yum.repos.d/lax.repo
+RUN useradd nginx
 RUN yum install nginx -y
 
 EXPOSE 80

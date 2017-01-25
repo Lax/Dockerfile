@@ -1,5 +1,7 @@
 # Usage
 
+Build image:
+
 ```
 curl -s -L -O https://github.com/Lax/Dockerfile/raw/master/rails/Dockerfile
 
@@ -9,11 +11,17 @@ source 'https://rubygems.org'
 gem 'rails'
 EOF
 
-bundle exec rails new -f .
-```
-
-```
 docker build -t rails-env .
+```
 
-docker run -i -t --rm rails-env rails s
+Create rails project:
+
+```
+docker run -i -t --rm -v `pwd`:/app rails-env rails new . -f -d postgresql
+```
+
+Run `rails server` (defailt command):
+
+```
+docker run -i -t --rm -v `pwd`:/app rails-env
 ```

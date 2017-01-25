@@ -20,6 +20,12 @@ Create rails project:
 docker run -i -t --rm -v `pwd`:/app rails-env rails new . -f -d postgresql
 ```
 
+Rebuild image:
+
+```
+docker build -t rails-env .
+```
+
 Run `rails server` (defailt command):
 
 ```

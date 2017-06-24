@@ -1,7 +1,7 @@
-FROM ruby
+FROM ruby:slim
 
 MAINTAINER Liu Lantao <liulantao@gmail.com>
-ENV REFRESHED_AT 2017-01-25
+ENV REFRESHED_AT 2017-06-24
 
 ENV WORK_DIR /app
 

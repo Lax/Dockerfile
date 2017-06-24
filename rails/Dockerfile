@@ -3,7 +3,7 @@ FROM ruby:slim
 MAINTAINER Liu Lantao <liulantao@gmail.com>
 ENV REFRESHED_AT 2017-06-24
 
-ENV WORK_DIR /app
+ENV WORK_DIR /usr/src/app
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc make git && \

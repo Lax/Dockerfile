@@ -1,5 +1,13 @@
 # Usage
 
+## Run
+
+```
+docker run -i -t --rm -v .:/usr/src/app liulantao/rails "bundle install && rails server"
+```
+
+## Build
+
 Build image:
 
 ```

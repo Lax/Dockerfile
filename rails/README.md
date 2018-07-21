@@ -1,5 +1,11 @@
 # Usage
 
+[liulantao/rails](https://hub.docker.com/r/liulantao/rails/)
+
+```
+docker pull liulantao/rails
+```
+
 ## Run
 
 ```

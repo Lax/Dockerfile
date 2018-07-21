@@ -15,6 +15,6 @@ RUN apt-get update \
 ENV WORK_DIR /usr/src/app
 WORKDIR $WORK_DIR
 
-RUN bundle install && bundle package && bundle install --deployment --frozen --local
-
-RUN bundle exec rails assets:precompile RAILS_ENV=production && rm -rf tmp/cache
+RUN rails new . \
+&& bundle install && bundle package && bundle install --deployment --frozen --local \
+&& bundle exec rails assets:precompile RAILS_ENV=production && rm -rf tmp/cache

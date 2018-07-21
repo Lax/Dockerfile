@@ -1,19 +1,20 @@
-FROM ruby:slim
-
-ENV WORK_DIR /usr/src/app
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+FROM ruby:2-slim AS builder
 
 MAINTAINER Liu Lantao <liulantao@gmail.com>
-ENV REFRESHED_AT 2017-06-24
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc make git && \
-    apt-get install -y --no-install-recommends mysql-client postgresql-client sqlite3 && \
-    rm -rf /var/lib/apt/lists/*
-
-WORKDIR $WORK_DIR
-COPY Gemfile ./
-RUN bundle install
+ENV REFRESHED_AT 2018-07-22
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+RUN apt-get update \
+&& apt-get install -qq -y build-essential git --fix-missing --no-install-recommends \
+&& apt-get install -qq -y nodejs libsqlite3-dev libpq-dev --fix-missing --no-install-recommends \
+&& apt autoremove -q -y && rm -rf /var/lib/apt/lists/* \
+&& gem install rails nokogiri foreman -N --minimal-deps
+
+ENV WORK_DIR /usr/src/app
+WORKDIR $WORK_DIR
+
+RUN bundle install && bundle package && bundle install --deployment --frozen --local
+
+RUN bundle exec rails assets:precompile RAILS_ENV=production && rm -rf tmp/cache

@@ -1,7 +1,7 @@
 FROM ruby:2-slim AS builder
 
 MAINTAINER Liu Lantao <liulantao@gmail.com>
-ENV REFRESHED_AT 2018-07-22
+ENV REFRESHED_AT 2018-08-09
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
